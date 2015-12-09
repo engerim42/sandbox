@@ -1,4 +1,4 @@
-Installing a X-Server with WindowMaker and x11vnc on Gandi's hosting
+Installing an X-Server with WindowMaker and x11vnc on Gandi's hosting
 ====================================================================
 
 .. image:: images/bsd-vnc.png
@@ -31,7 +31,9 @@ Output:
         Progress: [##############################################################################################] 100.00%  00:01:17
         Your Virtual Machine bsd2 has been created.
 
+
 Once the machine is online (be a bit patient) and if our keys were configured correctly we can ssh into it with:
+    
     ::
     
         $ gandi vm ssh bsd
