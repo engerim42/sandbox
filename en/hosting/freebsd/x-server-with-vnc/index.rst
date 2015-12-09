@@ -3,7 +3,7 @@ Installing an X-Server with WindowMaker and x11vnc on Gandi's hosting
 
 .. image:: images/bsd-vnc.png
 
-How to install FreeBSD on a Gandi VPS together with X11 and x11vnc to act as your virtual (graphical) terminal.
+Install FreeBSD on a Gandi VPS together with X11 and x11vnc to act as your virtual (graphical) terminal.
 
 Window Maker is light X11 window manager, has been around since 1997 and is still in active development. Its a perfect Window Manager for a "remote desktop".  More information about Window Maker: http://windowmaker.org/FAQ.php
 This document will explain you step by step how to to setup a VM, install X11, Window Maker, Firefox and how to access them remotely over VNC.
