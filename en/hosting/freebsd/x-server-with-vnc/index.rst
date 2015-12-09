@@ -15,11 +15,15 @@ Note: You can do this also on the web interface at https://www.gandi.net/ but I 
 
 We build a VM with 4 cores, 2048, hostname bsd, with FreeBSD 10.2 (ZFS) and IPv4 support at Gandi's datacenter in Luxembourg:
 
-    $ gandi vm create --cores 4 --memory 2048 --hostname bsd2 --image 'FreeBSD 10.2 64 bits (ZFS) (beta)' --datacenter LU-BI1 --ip-version 4 --size 10G
+    ::
+    
+        $ gandi vm create --cores 4 --memory 2048 --hostname bsd2 --image 'FreeBSD 10.2 64 bits (ZFS) (beta)' --datacenter LU-BI1 --ip-version 4 --size 10G
 
 Output:
 
-    * root user will be created.
+    ::
+    
+        * root user will be created.
     * SSH key authorization will be used.
     * No password supplied for vm (required to enable emergency web console access).
     * Configuration used: 4 cores, 2048Mb memory, ip v4+v6, image FreeBSD 10.2 64 bits (ZFS) (beta), hostname: bsd, datacenter: LU-BI1
