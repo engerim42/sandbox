@@ -73,6 +73,7 @@ Alternatively, instead to build each port manually, it is possible to use pkg(8)
 Example using pkg(8) to install screen.
 
     ::
+
         # pkg install sysutils/screen
 
 Now its time to build all packages for X11. You can also install binary (precompiled) FreeBSD packages but its more fun to customize things (and one of the things which work very well under FreeBSD).
