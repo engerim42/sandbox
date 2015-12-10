@@ -62,7 +62,7 @@ This should take around 10 minutes.
 
 After having the Ports in place we install screen first ( https://www.gnu.org/software/screen/ ) which allows us to run interactive shells in multiple, virtual terminal windows andin case our network connection breaks down we can simply run "screen -r" to get the terminal back.
 You'll see a couple of dialogs asking configuration specific questions (simply hit the Enter key). Setting the environment variable BATCH=yes will disable these interactive prompts.
-Alternatively, instead to build each port manually, it is possible to use pkg(8) to install the pre-built binary of these ports. In case there is no need to tuning clfgas for compilers or any other tuning case, we encourage you to use pkg. 
+Alternatively, instead to build each port manually, it is possible to use pkg(8) to install the pre-built binary of these ports. In case there is no need to tuning cflags for compilers or any other tuning case, we encourage you to use pkg. 
 
     ::
 
