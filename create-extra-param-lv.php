@@ -14,8 +14,8 @@ $domain_spec = array(
     'bill' => 'XX1234-GANDI',
     'tech' =>'XX1234-GANDI',
     'extra' => array('x-lv_idnumber' => 'C1234432323'),
-    'nameservers' => array('a.dns.gandi-ote.net', 'b.dns.gandi-ote.net',
-                           'c.dns.gandi-ote.net'),
+    'nameservers' => array('a.dns.gand.net', 'b.dns.gandi.net',
+                           'c.dns.gandi.net'),
     'duration' => 1);
 
 $op = $domain_api->__call('create', array($apikey, 'test-mydomain.lv',$domain_spec));
