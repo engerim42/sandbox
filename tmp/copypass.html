@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OTP and password copy sample page</title>
+  </head>
+<body style="background-color:white;">
+<h3>Simple password copy to clipboard example</h3>
+<p>Current one time password for this account: 123456<br>
+Reload this page to obtain a more recent code.<br>
+Login for example Service: <b>example-user@example.com</b></p>
+<p style="color:white;" class="js-password">A Very Secret Password Is Here</p>
+<p><button class="js-passcopybtn">Copy service password to clipboard</button></p>
+
+<script>
+  var ChromeSamples = {
+    log: function() {
+      var line = Array.prototype.slice.call(arguments).map(function(argument) {
+        return typeof argument === 'string' ? argument : JSON.stringify(argument);
+      }).join(' ');
+
+      document.querySelector('#log').textContent += line + '\n';
+    },
+
+    clearLog: function() {
+      document.querySelector('#log').textContent = '';
+    },
+
+    setStatus: function(status) {
+      document.querySelector('#status').textContent = status;
+    },
+
+    setContent: function(newContent) {
+      var content = document.querySelector('#content');
+      while(content.hasChildNodes()) {
+        content.removeChild(content.lastChild);
+      }
+      content.appendChild(newContent);
+    }
+  };
+</script>
+
+<div id="output" class="output">
+  <div id="content"></div>
+  <div id="status"></div>
+  <pre id="log"></pre>
+</div>
+
+<script>function performCopypass() {
+  var password = document.querySelector('.js-password');
+
+  var range = document.createRange();
+  range.selectNode(password);
+  window.getSelection().addRange(range);
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    ChromeSamples.log('Copy command was ' + msg);
+  } catch (err) {
+    ChromeSamples.log('execCommand Error', err);
+  }
+  window.getSelection().removeAllRanges();
+}
+
+function performCutTextarea() {
+  var cutTextarea = document.querySelector('.js-cuttextarea');
+  cutTextarea.select();
+
+  try {
+    var successful = document.execCommand('cut');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    ChromeSamples.log('Cutting text command was ' + msg);
+  } catch (err) {
+    ChromeSamples.log('execCommand Error', err);
+  }
+}
+
+// Get the buttons
+var copypassBtn = document.querySelector('.js-passcopybtn');
+
+// Add click event listeners
+copypassBtn.addEventListener('click', performCopypass);
+
+// The initial state should be disabled, and then enable based on
+// queryCommandSupported. This is currently a bug: crbug.com/476508
+// Set the initial state
+/*
+ copypassBtn.disabled = !document.queryCommandSupported('copy');
+*/
+</script>
+ 
+    </body>
+</html>
